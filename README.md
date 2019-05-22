@@ -23,7 +23,7 @@ Result is here: http://presentation-template.openshift.ext.cetic.be
 
 Using `div`:
 
-```
+```html
 <section  data-background-image="img/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 	<h2>How to create à double content based slide </h2>
 	<div  style="left:-8.33%; text-align: left;  float: left;  width:50%;  z-index:-10;">
@@ -41,9 +41,9 @@ Using `div`:
 </section>
 ```
 
-Using a table:
+Using a `table`:
 
-```
+```html
 <table>
 	<tr>
 		<td style="width: 50%;">bla</td>
