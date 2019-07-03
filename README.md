@@ -13,7 +13,9 @@ Open index.html in your browser or deploy this on OpenShift e.g. (see `.gitlab.y
 
 * presentation mode: press `s`
 * overview mode: press `escape`
-* pdf/print version: go to http://your_slides_url/?print-pdf#/
+* pdf/print version: go to http://your_slides_url/?print-pdf#/ 
+    * use shownotes to add the notes: print-pdf&showNotes=true
+    * use 4 slides per page for nice output
 
 See OpenShift usage documentation for deployment instructions: https://git.cetic.be/OpenShift/documentation/tree/master/webconsole/#tldr
 
