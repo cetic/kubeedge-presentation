@@ -6,7 +6,7 @@ stages:
 variables:
   OPENSHIFT_SERVER: https://openshift.ext.cetic.be:8443
   OPENSHIFT_DOMAIN: openshift.ext.cetic.be
-  APP_NAME: presentation-template
+  APP_NAME: kubeedge-presentation
   # Configure this variable in GitLab Secure Variables:
   # OPENSHIFT_TOKEN: my.openshift.token
 
@@ -33,4 +33,3 @@ prod:
     url: http://$APP_NAME.$OPENSHIFT_DOMAIN
   only:
     - master
-
