@@ -16,6 +16,8 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+
+		<link rel="import" href="./slides/test.html">
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -32,9 +34,14 @@
 					<h1>KubeEdge : A Kubernetes Native Edge Computing Framework</h1>
 					<h2>Selleslagh Tom</h2>
 					<h3>TIM, CETIC, November 13, 2019</h3>
-				</section>
 
-				<!-- This is the last page section -->
+				</section>
+					<script>
+					    var link = document.querySelector('link[rel="import"]');
+					    var content = link.import;
+					    var el = content.querySelector('.kubernetes');
+					    document.getElementById("slides").appendChild(el.cloneNode(true));
+				 </script>
 				<section class="lastpage" data-background-image="img/theme/cetic/background-lastpage.png">
 					<table>
 						<tr>
