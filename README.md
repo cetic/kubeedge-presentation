@@ -11,5 +11,5 @@
 * **Tom Selleslagh** : tom.selleslagh@cetic.be
 
 ### Designers
-* **Alexandre Nuttinck** : alexandre.nuttinck@cetic.be
+* **Alexandre Nuttinck** alexandre.nuttinck@cetic.be
 * **Sebastien Dupont** : sebastien.dupont@cetic.be
