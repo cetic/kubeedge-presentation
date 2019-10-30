@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
 		<link rel="import" href="./slides/test.html">
 		<!-- Printing and PDF exports -->
 		<script>
@@ -37,8 +37,8 @@
 
 				</section>
 					<section >
-								<section class="title"  >
-								<h1> Keys to understanding </h1>
+								<section  >
+								<h1> All you need to know </h1>
 								</section>
 
 
@@ -71,14 +71,30 @@
 								</section>
 
 								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<h1> K8S Objects </h1>
-										<ul>
-												<li> Pods
-												<li> RepilcaSet
-												<li> Deployement
-												<li> DaemonSet
-												<li> ...		
+									<h1> Ressources </h1>
+									<div  style="left:-8.33%;float: left;  width:50%; height:1200px; z-index:-10; padding-top:240px">
+										<h2 style="text-align:left;margin-left:180px"> Kubernetes : </h2>
+										<ul class="fa-ul">
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-box-open"></i></span>Pods</font></li>
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-boxes"></i></span>ReplicaSet</font></li>
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-truck-loading"></i></span>Deployement</font></li>
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-globe"></i></span>DaemonSet</font></li>
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-wrench"></i></span>Job (batch API)</font></li>
+											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-clock"></i></span>CronJob (batch API)</font></li>
+											...
 										</ul>
+										<br><br>
+										availables objects: <code style="color:#6fb052;background:#e6e6e6">&nbspkubectl api-resources&nbsp</code>
+									</div>
+									<div style="padding-top:240px">
+									<h2 style="text-align:left;margin-left:1250px"> Custom :</h2>
+									<ul class="fa-ul">
+									  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-code-branch"></i></span>Workflow</font> (<a href="https://argoproj.github.io/argo">Argo Project</a>)</li>
+									  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-microchip"></i></span>Device</font> (<a href="https://kubeedge.io/en/">KubeEdge</a>)</li>
+										<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-plus-square"></i></span>Home made</font></li>
+										...
+									</ul>
+									</div>
 								</section>
 				 </section>
 
