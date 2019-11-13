@@ -145,6 +145,30 @@
 									</ul>
 									</div>
 								</section>
+								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+									<h1> Summary </h1>
+									<table>
+										<tr>
+											<td style="vertical-align:middle"><img class="plain" data-src="img/clusterempty.png" width="100%"/></td>
+											<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
+											<td style="vertical-align:middle"><img class="plain" data-src="img/orchestration.png" width="100%"/></td>
+											<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
+											<td style="vertical-align:middle"><img class="plain" data-src="img/k8s.png" width="100%"/></td>
+										</tr>
+										<tr>
+											<td align=center style="vertical-align:middle">Kind of workers have to do some tasks</td>
+											<td align=center style="vertical-align:middle"></td>
+											<td align=center style="vertical-align:middle">Increase efficiency with a manager</td>
+											<td align=center style="vertical-align:middle"></td>
+											<td align=center style="vertical-align:middle">Same aspect with a <br>Container As A Service architecture</td>
+										</tr>
+									</table>
+
+
+
+
+								</section>
+
 				 </section>
 
 
@@ -207,16 +231,29 @@
 						 <h1 > KubeEdge Architecture</h1>
 						 <h4 > CloudCore - EdgeCore</h4>
 						 <img class="plain" data-src="img/ke-edgecore.png"/>
+						 <div align=left style="margin-left:1150px;margin-top:-360px">
+						 <ul>
+							 <li>Communication between cluster and edge node: WebSocket</li>
+							 <li>Specific process on each side</li>
+						 </ul>
+						 </div>
 					</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						 <h1 > KubeEdge Architecture</h1>
 						 <h4 > EdgeSite</h4>
 						 <img class="plain" data-src="img/ke-edgesite.png"/>
+						 <div align=left style="margin-left:1150px;margin-top:-360px">
+						 <ul>
+							 <li>Communication between cluster and edge node: K8S Api</li>
+							 <li>Process on edge side</li>
+						 </ul>
+						 </div>
 					</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 		 				<h1 > EdgeNode </h1>
 						<h4 > Architecture</h4>
 		 				<img class="plain" data-src="img/kubeedgemod.png" width="100%"/>
+
 		 		 </section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h1> EdgeNode </h1>
@@ -274,20 +311,26 @@
 			 </section>
 			 <section>
 				 <h1>feedback</h1>
-				 Rien n'est automatisée :
-				 		crd
-				 		Ajout d'un noeuds dans le master
-						parmaètrage du noeuds edged
-						lancement de l'applications
-				 pas de service (systemd)
-
-				 edgeSite : http - https :(
+				 <ul>
+					 <li><h4>Roll up yours sleeves, you will have to do everything :</h4>
+						 <ul>
+							 <li> Download binary
+							 <li> Configure
+							 <li> Launch Process
+							 <li> Create sytemd services.
+							 <li> Add CustomRessource
+							 <li> Create Driver for the device
+							 <li> Create MQTT mapper
+							 <li> Add Device on both side
+ 						 </ul>
+					 </li>
 			</section>
 			<section>
-				<h1>way to contribute</h1>
+				<h1>Perspectives</h1>
 		 </section>
 		 <section>
 			 <h1>Conclusion</h1>
+			 28 Sep 2018
 		</section>
 			 <section class="title">
 				 <h1>Credits</h1>
