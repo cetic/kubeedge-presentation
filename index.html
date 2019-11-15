@@ -32,7 +32,7 @@
 			<div class="slides">
 				<section class="homepage" data-background-image="img/theme/cetic/background-homepage.png" data-background-size="contain">
 					<h1>KubeEdge : A Kubernetes Native Edge Computing Framework</h1>
-					<h2>Selleslagh Tom</h2>
+					<h2>Selleslagh Tom, Dupont Sébastien</h2>
 					<h3>TIM, CETIC, November 13, 2019</h3>
 
 				</section>
@@ -156,11 +156,11 @@
 											<td style="vertical-align:middle"><img class="plain" data-src="img/k8s.png" width="100%"/></td>
 										</tr>
 										<tr>
-											<td align=center style="vertical-align:middle">Kind of workers have to do some tasks</td>
+											<td align=center style="vertical-align:middle">Workers have to perform some tasks</td>
 											<td align=center style="vertical-align:middle"></td>
 											<td align=center style="vertical-align:middle">Increase efficiency with a manager</td>
 											<td align=center style="vertical-align:middle"></td>
-											<td align=center style="vertical-align:middle">Same aspect with a <br>Container As A Service architecture</td>
+											<td align=center style="vertical-align:middle">Container as a Service architecture</td>
 										</tr>
 									</table>
 
@@ -218,40 +218,44 @@
 					 </section>
 					 <section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 							<h1 > Edge Computing</h1>
-							<h4 > Resilience challenge resolving</h4>
+							<h4 > Solving the resilience challenge</h4>
 							<img class="plain" data-src="img/cloudedge.png" width="100%"/>
+							<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
+							<font size="16">give the possibility to the cloud to bypass the control over the processes running in the edge</font>
+							</div>
 					 </section>
 				</section>
 				</section>
 				<section>
 					<section>
-						 <h1> KubeEdge </h1>
+						 <img class="plain" data-src="img/icon-2.png" width=300px/>
+						 <div style="margin-left:320px;margin-right:320px;margin-top:100px"><font size=16px>Open source system for extending native containerized application orchestration capabilities to hosts at Edge</font></div>
 					</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						 <h1 > KubeEdge Architecture</h1>
-						 <h4 > CloudCore - EdgeCore</h4>
+						 <h4 > Option 1 : CloudCore - EdgeCore</h4>
 						 <img class="plain" data-src="img/ke-edgecore.png"/>
 						 <div align=left style="margin-left:1150px;margin-top:-360px">
 						 <ul>
-							 <li>Communication between cluster and edge node: WebSocket</li>
+							 <li>Communication between cluster and edge nodes: WebSocket</li>
 							 <li>Specific process on each side</li>
 						 </ul>
 						 </div>
 					</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						 <h1 > KubeEdge Architecture</h1>
-						 <h4 > EdgeSite</h4>
+						 <h4 > Option 2 : EdgeSite</h4>
 						 <img class="plain" data-src="img/ke-edgesite.png"/>
 						 <div align=left style="margin-left:1150px;margin-top:-360px">
 						 <ul>
-							 <li>Communication between cluster and edge node: K8S Api</li>
+							 <li>Communication between cluster and edge nodes: K8S Api</li>
 							 <li>Process on edge side</li>
 						 </ul>
 						 </div>
 					</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 		 				<h1 > EdgeNode </h1>
-						<h4 > Architecture</h4>
+						<h4 > Components</h4>
 		 				<img class="plain" data-src="img/kubeedgemod.png" width="100%"/>
 
 		 		 </section>
@@ -261,7 +265,7 @@
 						<table width="100%" >
 							<tr height="300">
 								<td width="35%"  style="vertical-align:middle">
-										<b>ServiceBus</b> acts as an interface for sending/receiving messages over a <font color="#6fb052">WebSocket</font>.
+										<b>ServiceBus</b> acts as an interface for sending/receiving messages over <font color="#6fb052">WebSocket</font>.
 								</td>
 								<td Background="img/BlocSB.png" width="30%">
 
@@ -312,7 +316,7 @@
 			 <section>
 				 <h1>feedback</h1>
 				 <ul>
-					 <li><h4>Roll up yours sleeves, you will have to do everything :</h4>
+					 <li><h4>Roll up your sleeves, you will have to do everything :</h4>
 						 <ul>
 							 <li> Download binary
 							 <li> Configure
@@ -321,25 +325,44 @@
 							 <li> Add CustomRessource
 							 <li> Create Driver for the device
 							 <li> Create MQTT mapper
-							 <li> Add Device on both side
+							 <li> Add device on both sides
+							 <li> ...
  						 </ul>
 					 </li>
 			</section>
 			<section>
 				<h1>Perspectives</h1>
-				Create mapper and driver.
+				<br>
+				<font size=16>
+				<ul>
+					<li> <font color="#6fb052">KubeEdge</font>
+						<ul>
+							<li> Security at the edge
+							<li> EdgeMesh
+						</ul>
+					<br>
+					<li> <font color="#6fb052">CETIC</font>
+						<ul>
+							<li> Mapper and driver (6LBR, LoRa...)
+							<li> Deployement tool
+							<li> Report issues
+						</ul>
+				</ul>
+				</font>
 		 </section>
 		 <section>
 			 <h1>Conclusion</h1><font size=16px>
-Project less than  <font color="#6fb052">one year old</font> but which has already  <font color="#6fb052">evolved</font> a lot. Which slowly can become a usable solution in production.
+Project less than  <font color="#6fb052">one year old</font> but which has already  <font color="#6fb052">evolved</font> a lot. Which can slowly become a usable solution in production.
 The focus is not yet on the ingestion of data but on the  <font color="#6fb052">communication</font> between the nodes</font>
 		</section>
-			 <section class="title">
+<section>
 				 <h1>Credits</h1>
 <ul>
 	<li>https://www.flaticon.com/authors/smashicons
 	<li>https://www.flaticon.com/authors/monkik
 	<li>https://www.flaticon.com/authors/good-ware
+	<li><a href="https://www.kubernetes.io">kubernetes.io</a>
+	<li><a href="https://kubeedge.io">kubeedge.io</a>
 </ul>
 </section>
 				<section class="lastpage" data-background-image="img/theme/cetic/background-lastpage.png">
