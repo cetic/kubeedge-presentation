@@ -31,201 +31,226 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="homepage" data-background-image="img/theme/cetic/background-homepage.png" data-background-size="contain">
-					<h1>KubeEdge : A Kubernetes Native Edge Computing Framework</h1>
+					<h1>Edge computing on heterogeneous hardware using KubeEdge and K3S</h1>
 					<h2>Selleslagh Tom, Dupont Sébastien</h2>
-					<h3>TIM, CETIC, November 13, 2019</h3>
-
+					<h3>6th Reconfigurable Market Seminar, December 2nd, 2019</h3>
+					<h3><a href="https://kubeedge.presentations.cetic.be" title="Find this presentation at https://kubeedge.presentations.cetic.be">https://kubeedge.presentations.cetic.be</a> </h3>
 				</section>
-				<section >
+				<section>
 					<section>
-				<h1> Agenda </h1>
-				<br>
-				<table width=70%>
-					<tr>
-						<td style="vertical-align:middle" align=right width=45%><h3>Background Knowledge<h3></td>
-						<td align=center width=10%><img class="plain" data-src="img/dot/number1.png" width="80%"/></td>
-						<td width=45%><td>
-					</tr>
-					<tr>
-						<td></td>
-						<td align=center><img class="plain" data-src="img/dot/number2.png" width="80%"/></td>
-						<td style="vertical-align:middle"><h3>Edge Computing</h3><td>
-					</tr>
-					<tr>
-						<td style="vertical-align:middle" align=right><h3>KubeEdge</h3></td>
-						<td align=center><img class="plain" data-src="img/dot/number3.png" width="80%"/></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td align=center><img class="plain" data-src="img/dot/number4.png" width="80%"/></td>
-						<td style="vertical-align:middle"><h3>Feedback</h3></td>
-					</tr>
-					<tr>
-						<td style="vertical-align:middle" align=right><h3>Perspectives</h3></td>
-						<td align=center><img class="plain" data-src="img/dot/number5.png" width="80%"/></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td ></td>
-						<td align=center><img class="plain" data-src="img/dot/number6.png" width="80%"/></td>
-						<td style="vertical-align:middle"><h3>Conclusion</h3></td>
-					</tr>
-				</table>
-			</section>
+						<h1> Agenda </h1>
+						<br>
+						<table width=70%>
+							<tr>
+								<td style="vertical-align:middle" align=right width=45%><h3>Edge Computing</h3></td>
+								<td align=center width=10%><img class="plain" data-src="img/dot/number1.png" width="80%"/></td>
+								<td width=45%><td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align=center><img class="plain" data-src="img/dot/number2.png" width="80%"/></td>
+								<td style="vertical-align:middle"><h3>Containers Orchestration</h3><td>
+							</tr>
+							<tr>
+								<td style="vertical-align:middle" align=right><h3>KubeEdge</h3></td>
+								<td align=center><img class="plain" data-src="img/dot/number3.png" width="80%"/></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td align=center><img class="plain" data-src="img/dot/number4.png" width="80%"/></td>
+								<td style="vertical-align:middle"><h3>Use case</h3></td>
+							</tr>
+							<tr>
+								<td style="vertical-align:middle" align=right><h3>Perspectives</h3></td>
+								<td align=center><img class="plain" data-src="img/dot/number5.png" width="80%"/></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td ></td>
+								<td align=center><img class="plain" data-src="img/dot/number6.png" width="80%"/></td>
+								<td style="vertical-align:middle"><h3>Conclusion</h3></td>
+							</tr>
+						</table>
+					</section>
 				</section>
-					<section>
-								<section  >
-								<h1>background Knowledge </h1>
-								</section>
 
+				<section>
+					<section >
+						<h1> Edge Computing </h1>
+					</section>
 
-								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<h1> Cluster </h1>
-									<div  style="left:-8.33%; text-align: left;  float: left;  width:50%;  z-index:-10;">
-											<img class="plain" data-src="img/clusterempty.png" width="100%"/>
-									</div>
-									<div align=right style="margin-right:120px;margin-top:380px">
-											<i><font size="18">A group of similar things that are close together, sometimes surrounding something</font></i>
-											<br>
-											<font size="6" color="#6d6d6d">Cambridge dictionary</font>
-											<br>
-											<br>
-											<i><font size="18">A number of similar things that occur together</i></font>
-											<br>
-											<font size="6" color="#6d6d6d">merriam-webster dictionary</font>
-											<br>
-									</div>
-								</section>
-
-								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<h1> Orchestration </h1>
-									<img class="plain" data-src="img/orchestration.png" width="100%"/>
-									<div align=right style="margin-left:1050px;margin-right:320px;margin-top:-340px">
-									<i><font size="16">Plan and organize something carefully and sometimes secretly in order to achieve a desired result</i></font>
-									<br>
-									<font size="6" color="#6d6d6d">Cambridge dictionary</font>
-									</div>
-								</section>
-
-								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<h1> Kubernetes (K8S) </h1>
-									<img class="plain" data-src="img/k8s.png" width="100%"/>
-									<div align=right style="margin-left:1050px;margin-right:320px;margin-top:-340px">
-									<i><font size="16">system for automating deployment, scaling, and management of containerized applications</i></font>
-									<br>
-									<font size="6" color="#6d6d6d">kubernetes.io</font>
-									</div>
-								</section>
-
-								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<aside class="notes"> Lien container - Pods</aside>
-									<h1> Ressources </h1>
-									<div  style="left:-8.33%;float: left;  width:50%; height:1200px; z-index:-10; padding-top:240px">
-										<h2 style="text-align:left;margin-left:180px"> Kubernetes : </h2>
-										<ul class="fa-ul">
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-box-open"></i></span>Pods</font></li>
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-boxes"></i></span>ReplicaSet</font></li>
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-truck-loading"></i></span>Deployement</font></li>
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-globe"></i></span>DaemonSet</font></li>
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-wrench"></i></span>Job (batch API)</font></li>
-											<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-clock"></i></span>CronJob (batch API)</font></li>
-											...
-										</ul>
-										<br><br>
-										availables objects: <code style="color:#6fb052;background:#e6e6e6">&nbspkubectl api-resources&nbsp</code>
-									</div>
-									<div style="padding-top:240px">
-									<h2 style="text-align:left;margin-left:1250px"> Custom :</h2>
-									<ul class="fa-ul">
-									  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-code-branch"></i></span>Workflow</font> (<a href="https://argoproj.github.io/argo">Argo Project</a>)</li>
-									  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-microchip"></i></span>Device</font> (<a href="https://kubeedge.io/en/">KubeEdge</a>)</li>
-										<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-plus-square"></i></span>Home made</font></li>
-										...
-									</ul>
-									</div>
-								</section>
-								<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-									<h1> Summary </h1>
-									<table>
-										<tr>
-											<td style="vertical-align:middle"><img class="plain" data-src="img/clusterempty.png" width="100%"/></td>
-											<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
-											<td style="vertical-align:middle"><img class="plain" data-src="img/orchestration.png" width="100%"/></td>
-											<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
-											<td style="vertical-align:middle"><img class="plain" data-src="img/k8s.png" width="100%"/></td>
-										</tr>
-										<tr>
-											<td align=center style="vertical-align:middle">Workers have to perform some tasks</td>
-											<td align=center style="vertical-align:middle"></td>
-											<td align=center style="vertical-align:middle">Increase efficiency with a manager</td>
-											<td align=center style="vertical-align:middle"></td>
-											<td align=center style="vertical-align:middle">Container as a Service architecture</td>
-										</tr>
-									</table>
-
-
-
-
-								</section>
-
-				 </section>
-
-
-			 	 <section>
-					 <section >
-					 		<h1> Cloud vs Edge Computing </h1>
-					 </section>
-
-
-					 <section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-							<h1 > Cloud Computing </h1>
-							<img class="plain" data-src="img/cloudcomp.png" width="100%"/>
-							<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
+					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h1 > Cloud Computing </h1>
+						<img class="plain" data-src="img/cloudcomp.png" width="100%"/>
+						<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
 							<i><font size="16">A network of remote servers hosted on the Internet which can store, manage, and process data, rather than using a local server or a personal computer</i></font>
 							<br>
 							<font size="6" color="#6d6d6d">IGI-Global.com</font>
-							</div>
-					 </section>
+						</div>
+					</section>
 
-					 <section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-							<h1 > Edge Computing </h1>
-							<h4 > Definitions</h4>
-							<img class="plain" data-src="img/edgecomp.png" width="100%"/>
-							<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
+					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h1 > Edge Computing </h1>
+						<img class="plain" data-src="img/edgecomp.png" width="100%"/>
+						<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
 							<i><font size="16">Data processing and storage takes place at or near the edge, a boundary between digital and physical entities.<br> This nearness will be defined by the system's requirements.</i></font>
 							<br>
 							<font size="6" color="#6d6d6d">ISO/IEC JTC 1/SC 38</font>
-							</div>
-					 </section>
-					 <section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-							<h1 > Edge Computing</h1>
-							<h4 > Challenges</h4>
+						</div>
+					</section>
+					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h1 > Edge Computing</h1>
+						<h4 > Challenges</h4>
+						<div  style="left:-8.33%; text-align: left;  float: left;  width:50%;  z-index:-10;">
+							<img class="plain" data-src="img/edge.png" width="70%"/>
+						</div>
+						<div align=right style="margin-right:320px;margin-top:380px">
+							<ul class="fa-ul">
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-microchip"></i></span>Heterogeneity</font></li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-shield-alt"></i></span>Security</font></li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-clock"></i></span>Latency</font></li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-globe"></i></span>Lack of mobility support</font></li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-search-location"></i></span>Location-awareness</font></li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-dumbbell"></i></span>Resilience</font></li>
+								...
+							</ul>
+						</div>
+					</section>
+					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h1 > Edge Computing</h1>
+						<h3 > Solving the resilience challenge</h3>
+						<img class="plain" data-src="img/cloudedge.png" width="100%"/>
+						<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px;text">
+							<ul>
+								<li>cloud can take over failing processes from the edge</li>
+								<li>edge can operate autonomously in case the cloud is unavailable</li>
+								<li>distribute and rebalance processing between cloud and edge</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				</section>
+
+					<section>
+						<section>
+						<h1>Container orchestration</h1>
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Virtualisation and Containers </h1>
+							<h3>Containers provide fast and lightweight virtualization at the OS level</h3>
+								<img class="plain" data-src="img/virtualisation.png" />
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Cluster </h1>
 							<div  style="left:-8.33%; text-align: left;  float: left;  width:50%;  z-index:-10;">
-									<img class="plain" data-src="img/edge.png" width="70%"/>
+									<img class="plain" data-src="img/clusterempty.png" width="100%"/>
 							</div>
-							<div align=right style="margin-right:320px;margin-top:380px">
+							<div align=right style="margin-right:120px;margin-top:380px">
+									<i><font size="18">A group of similar things that are close together, sometimes surrounding something</font></i>
+									<br>
+									<font size="6" color="#6d6d6d">Cambridge dictionary</font>
+									<br>
+									<br>
+									<i><font size="18">A number of similar things that occur together</font></i>
+									<br>
+									<font size="6" color="#6d6d6d">merriam-webster dictionary</font>
+									<br>
+							</div>
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Orchestration </h1>
+							<img class="plain" data-src="img/orchestration.png" width="100%"/>
+							<div align=right style="margin-left:1050px;margin-right:320px;margin-top:-340px">
+							<i><font size="16">Plan and organize something carefully and sometimes secretly in order to achieve a desired result</i></font>
+							<br>
+							<font size="6" color="#6d6d6d">Cambridge dictionary</font>
+							</div>
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Kubernetes (K8S) </h1>
+							<img class="plain" data-src="img/k8s.png" width="100%"/>
+							<div align=right style="margin-left:1050px;margin-right:320px;margin-top:-340px">
+							<i><font size="16">system for automating deployment, scaling, and management of containerized applications</i></font>
+							<br>
+							<font size="6" color="#6d6d6d">kubernetes.io</font>
+							</div>
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<aside class="notes"> Lien container - Pods</aside>
+							<h1> Kubernetes Ressources </h1>
+							<div  style="left:-8.33%;float: left;  width:50%; height:1200px; z-index:-10; padding-top:240px">
+								<h2 style="text-align:left;margin-left:180px"> Kubernetes : </h2>
 								<ul class="fa-ul">
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-microchip"></i></span>Heterogeneity</font></li>
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-shield-alt"></i></span>Security</font></li>
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-clock"></i></span>Latency</font></li>
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-globe"></i></span>Lack of mobility support</font></li>
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-search-location"></i></span>Location-awareness</font></li>
-									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-dumbbell"></i></span>Resilience</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-box-open"></i></span>Pods</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-boxes"></i></span>ReplicaSet</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-truck-loading"></i></span>Deployement</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-globe"></i></span>DaemonSet</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-wrench"></i></span>Job (batch API)</font></li>
+									<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-clock"></i></span>CronJob (batch API)</font></li>
 									...
 								</ul>
+								<br><br>
+								Get available objects: <code style="color:#6fb052;background:#e6e6e6">&nbsp kubectl api-resources&nbsp</code>
 							</div>
-					 </section>
-					 <section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
-							<h1 > Edge Computing</h1>
-							<h4 > Solving the resilience challenge</h4>
-							<img class="plain" data-src="img/cloudedge.png" width="100%"/>
-							<div align=right style="margin-left:760px;margin-right:200px;margin-top:-340px">
-							<font size="16">give the possibility to the cloud to bypass the control over the processes running in the edge</font>
+							<div style="padding-top:240px">
+							<h2 style="text-align:left;margin-left:1250px"> Custom :</h2>
+							<ul class="fa-ul">
+							  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-code-branch"></i></span>Workflow</font> (<a href="https://argoproj.github.io/argo">Argo Project</a>)</li>
+							  <li style="list-style:none"><font size=16pt><span class="fa-li"><i class="fas fa-microchip"></i></span>Device</font> (<a href="https://kubeedge.io/en/">KubeEdge</a>)</li>
+								<li style="list-style:none"><font size=16pt><span class="fa-li"><i class="far fa-plus-square"></i></span>Community or home made</font></li>
+								...
+							</ul>
 							</div>
-					 </section>
-				</section>
-				</section>
+						</section>
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Kubernetes orchestration </h1>
+							<table>
+								<tr>
+									<td style="vertical-align:middle"><img class="plain" data-src="img/clusterempty.png" width="100%"/></td>
+									<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
+									<td style="vertical-align:middle"><img class="plain" data-src="img/orchestration.png" width="100%"/></td>
+									<td style="vertical-align:middle"><img class="plain" data-src="img/dot/arrowright.png" width="50%"/></td>
+									<td style="vertical-align:middle"><img class="plain" data-src="img/k8s.png" width="100%"/></td>
+								</tr>
+								<tr>
+									<td align=center style="vertical-align:middle">Workers have to perform some tasks</td>
+									<td align=center style="vertical-align:middle"></td>
+									<td align=center style="vertical-align:middle">Increase efficiency with a manager</td>
+									<td align=center style="vertical-align:middle"></td>
+									<td align=center style="vertical-align:middle">Container as a Service architecture</td>
+								</tr>
+							</table>
+						</section>
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<h1> Kubernetes distributions </h1>
+								<ul>
+									<li>Installers: Kops / Kubeadm / Kubespray</li>
+									<li>Public clouds: Amazon EKS , Azure Kubernetes Service, GKS, ...</li>
+									<li>Platform as a Service: Rancher, OpenShift, ...</li>
+									<li>Single node development: Minikube, MicroK8S, ...</li>
+									<li>...</li>
+								</ul>
+						</section>
+
+						<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+							<img src="img/logo-k3s.svg" width="20%"/>
+							<h2>A lightweight Kubernetes distribution</h2>
+							<ul>
+								<li>small binary</li>
+								<li>low memory requirements</li>
+								<li>containerd instead of Docker</li>
+								<li>multi architecture (ARMv7, ARM64, x86, ...)</li>
+							</ul>
+						</section>
+
+				 </section>
+
 				<section>
 					<section>
 						 <img class="plain" data-src="img/icon-2.png" width=300px/>
@@ -257,15 +282,14 @@
 		 				<h1 > EdgeNode </h1>
 						<h4 > Components</h4>
 		 				<img class="plain" data-src="img/kubeedgemod.png" width="100%"/>
-
-		 		 </section>
+		 		 	</section>
 					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
 						<h1> EdgeNode </h1>
 						<h4 > Modules Roles</h4>
 						<table width="100%" >
 							<tr height="300">
 								<td width="35%"  style="vertical-align:middle">
-										<b>ServiceBus</b> acts as an interface for sending/receiving messages over <font color="#6fb052">WebSocket</font>.
+									<b>ServiceBus</b> acts as an interface for sending/receiving messages over <font color="#6fb052">WebSocket</font>.
 								</td>
 								<td Background="img/BlocSB.png" width="30%">
 
@@ -286,7 +310,7 @@
 							</tr >
 							<tr height="300">
 								<td  style="vertical-align:middle">
-										<b>DeviceTwin</b> module is responsible for storing <font color="#6fb052">device status</font>, dealing with device attributes, <font color="#6fb052">syncing</font> device status to the cloud and syncing the device twin information between edge and cloud, ...
+									<b>DeviceTwin</b> module is responsible for storing <font color="#6fb052">device status</font>, dealing with device attributes, <font color="#6fb052">syncing</font> device status to the cloud and syncing the device twin information between edge and cloud, ...
 								</td>
 								<td Background="img/BlocDT.png" >
 
@@ -303,57 +327,90 @@
 
 								</td >
 								<td  style="vertical-align:middle">
-								<b>Eventbus</b> acts as an interface for sending/receiving messages on <font color="#6fb052">mqtt topics</font>.
-								<aside class="notes">
-									MQTT : 3 modes : internalMqttMode, externalMqttMode,bothMqttMode
-								</aside>
+									<b>Eventbus</b> acts as an interface for sending/receiving messages on <font color="#6fb052">mqtt topics</font>.
+									<aside class="notes">
+										MQTT : 3 modes : internalMqttMode, externalMqttMode,bothMqttMode
+									</aside>
 								</td>
 							</tr>
 						</table>
-
 					</section>
-			 </section>
-			 <section>
-				 <h1>feedback</h1>
-				 <ul>
-					 <li><h4>Roll up your sleeves, you will have to do everything :</h4>
-						 <ul>
-							 <li> Download binary
-							 <li> Configure
-							 <li> Launch Process
-							 <li> Create sytemd services.
-							 <li> Add CustomRessource
-							 <li> Create Driver for the device
-							 <li> Create MQTT mapper
-							 <li> Add device on both sides
-							 <li> ...
- 						 </ul>
-					 </li>
+					<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+						<h1>Edge solutions</h1>
+						<ul>
+							<li>OpenStack StarlingX
+							<li>LF Edge + Edge X Foundry
+							<li>ETSI Multi-Access Edge Computing
+							<li>KubeEdge + K3S
+							<li>Apache NiFi + MiNiFi
+							<li>AWS IoT Greengrass
+							<li>Azure IoT Edge
+							<li>Google IoT Edge
+						</ul>
+					</section>
+				</section>
+
+			<section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>Use Case</h1>
+					<h2>Data analysis in industrial applications - FADI</h2>
+					<img src="img/usecase.png" />
+					<ul>
+						<li>high volumes: filter and compress data (preprocessing at the edge)</li>
+						<li>time sensistive alerts: do not depend on the cloud</li>
+						<li>loss of/poor network connectivity: buffer data, fallback processing mode in the edge</li>
+					</ul>
+				</section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>Test bed</h1>
+					<h2>PPCC - A portable datacenter to simulate Cloud and Edge infrastructures</h2>
+					<ul>
+						<li>Test deployment before moving to production</li>
+						<li>Heterogeneous architecture: ARM, ARM64, x86, ... (Pine64, Raspberry Pi, PCEngines APU, ESP32, ...)</li>
+						<li>Sensors and actuators: fan, leds, switches</li>
+						<li>Edge nodes with KubeEdge, Cloud nodes with K3S</li>
+					</ul>
+				</section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>PPCC - Mark 1</h1>
+					<h2>Prototyping</h2>
+					<img src="img/ppcc1.jpg" />
+				</section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>PPCC - Mark 2</h1>
+					<h2>Kubernetes</h2>
+					<img src="img/ppcc2.jpg" />
+				</section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>PPCC - Mark 2</h1>
+					<h2>Kubernetes</h2>
+					<img src="img/ppcc3.jpg" width="800px" />
+				</section>
+				<section data-background-image="img/theme/cetic/logo-cetic.png" data-background-position="98% 2%" data-background-size="10%">
+					<h1>PPCC - Mark 3</h1>
+					<h2>Lights!</h2>
+					<video width="800" height="600" controls>
+						<source src="img/ppcc.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
 			</section>
+
 			<section>
 				<h1>Perspectives</h1>
-				<br>
-				<font size=16>
 				<ul>
-					<li> <font color="#6fb052">KubeEdge</font>
-						<ul>
-							<li> Security at the edge
-							<li> EdgeMesh
-						</ul>
-					<br>
-					<li> <font color="#6fb052">CETIC</font>
-						<ul>
-							<li> Mapper and driver (6LBR, LoRa...)
-							<li> Deployement tool
-							<li> Report issues
-						</ul>
+					<li> Security at the edge
+					<li> EdgeMesh - make Edge nodes communicate with each others
+					<li> Mapper and drivers (6LBR, LoRa...)
+					<li> FPGA</li>
 				</ul>
-				</font>
-		 </section>
+			 </section>
 		 <section>
 			 <h1>Conclusion</h1><font size=16px>
-Project less than  <font color="#6fb052">one year old</font> but which has already  <font color="#6fb052">evolved</font> a lot. Which can slowly become a usable solution in production.
-The focus is not yet on the ingestion of data but on the  <font color="#6fb052">communication</font> between the nodes</font>
+KubeEdge is less than  <font color="#6fb052">one year old</font> but has already  <font color="#6fb052">evolved</font> a lot. Which can slowly become a usable solution in production.
+The focus is not yet on the ingestion of data but on the  <font color="#6fb052">communication</font> between the nodes<br /><br />
+K3S provides lightweight Kubernetes deployment on heterogeneous hardware.<br /><br />
+			 Those 2 tools can extend data analysis capabilities from the Cloud to the Edge.</font>
 		</section>
 <section>
 				 <h1>Credits</h1>
@@ -361,8 +418,10 @@ The focus is not yet on the ingestion of data but on the  <font color="#6fb052">
 	<li>https://www.flaticon.com/authors/smashicons
 	<li>https://www.flaticon.com/authors/monkik
 	<li>https://www.flaticon.com/authors/good-ware
+	<li>https://github.com/SheepKnight
 	<li><a href="https://www.kubernetes.io">kubernetes.io</a>
 	<li><a href="https://kubeedge.io">kubeedge.io</a>
+
 </ul>
 </section>
 				<section class="lastpage" data-background-image="img/theme/cetic/background-lastpage.png">
@@ -440,6 +499,17 @@ The focus is not yet on the ingestion of data but on the  <font color="#6fb052">
 									</tr>
 									<tr>
 										<td style="text-align: center">tom.selleslagh@cetic.be</td>
+									</tr>
+								</table>
+								<table style="width: 100%">
+									<tr>
+										<td style="text-align: center"><h2>Sebastien Dupont</h2></td>
+									</tr>
+									<tr>
+										<td style="text-align: center"><h3>Expert Research Engineer</h3></td>
+									</tr>
+									<tr>
+										<td style="text-align: center">sebastien.dupont@cetic.be</td>
 									</tr>
 								</table>
 							</td>
