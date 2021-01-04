@@ -1,6 +1,10 @@
-# KubeEdge presentation slides
+# EDGE COMPUTING ON HETEROGENEOUS HARDWARE USING KUBEEDGE AND K3S
 
-Find this presentation online: https://kubeedge.presentations.cetic.be
+This presentation provides a brief introduction to edge computing and containers orchestration, describes the [KubeEdge](https://kubeedge.io/) solution, illustrates its use through an edge use case for temperature regulation of a portable datacenter, and looks at perspectives (edge mesh, mappers addition, security at the edge, FPGA)
+
+Find this presentation online: 
+* https://cetic.github.io/kubeedge-presentation/#/ 
+* https://kubeedge.presentations.cetic.be
 
 ### References
 
